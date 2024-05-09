@@ -1,0 +1,42 @@
+// Get All Game Records
+GET http://localhost:3000/games
+
+###
+// Get Specific Game Record
+GET http://localhost:3000/games/1
+
+###
+// Add New Game Record
+POST http://localhost:3000/games
+Content-Type: application/json
+
+{
+    "gameName": "testGame3",
+    "systemId": -1,
+    "maxWLCMain": 5000,
+    "maxWLCFreegames": 10000,
+    "freegames": false,
+    "gamble": true,
+    "jackpot": true,
+    "mathId": 1
+}
+
+###
+// Delete Specific Game Record
+DELETE http://localhost:3000/games/3
+
+###
+// Update Specific Game Record
+PATCH http://localhost:3000/games/3
+Content-Type: application/json
+
+{
+    "gameName": "testGame1",
+    "systemId": 1, // Can be updated or not?
+    "maxWLCMain": 5000,
+    "maxWLCFreegames": 10000,
+    "freegames": false,
+    "gamble": true,
+    "jackpot": true,
+    "mathId": 1
+}
