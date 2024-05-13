@@ -18,7 +18,10 @@ app.use('/games', gamesRouter)
 const appsRouter = require('./routes/apps')
 app.use('/apps', appsRouter)
 // Jackpot Router
-
+const jackpotsRouter = require('./routes/jackpots')
+app.use('/jackpots', jackpotsRouter)
 // Math Router
+const mathsRouter = require('./routes/maths')
+app.use('/maths', mathsRouter)
 
 app.listen(3000, () => console.log('Server Started'))

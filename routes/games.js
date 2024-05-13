@@ -33,7 +33,7 @@ router.post('/', async (req, res) => {
             return res.status(400).json({ message: 'System Id Already exists!'})
         }
         // Check if Game Name exists
-        const existingGameName = await Game.findOne({ gameName: req.body.gameName.toLowerCase() })
+        const existingGameName = await Game.findOne({ gameName: req.body.gameName })
         if (existingGameName && existingGameName.gameName.toLowerCase() === req.body.gameName.toLowerCase()) {
             return res.status(400).json({ message: 'Game Name Already exists!' })
         }
@@ -54,15 +54,6 @@ router.post('/', async (req, res) => {
     } catch (err) {
         res.status(400).json({ message: err.message})
     }
-    
-
-    // const game = new Game(req.body)
-    // try {
-    //     const newGame = await game.save()
-    //     res.status(201).json(newGame)
-    // } catch (err) {
-    //     res.status(400).json({ message: err.message})
-    // }
 })
 
 // Updating One
@@ -91,6 +82,17 @@ router.delete('/:id', getGame, async (req, res) => {
     }
 })
 
+// Deleting All
+router.delete('/', async (req, res) => {
+    try {
+        await Game.deleteMany({})
+        res.json({ message: 'All games deleted' })
+    } catch (err) {
+        res.status(500).json({ message: err.message })
+    }
+})
+
+// Get Game By Id
 async function getGame(req, res, next) {
     let game
     try {

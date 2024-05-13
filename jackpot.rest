@@ -1,0 +1,38 @@
+// Get All Jackpot Records
+GET http://localhost:3000/jackpots
+
+###
+// Get Specific Jackpot Record
+GET http://localhost:3000/jackpots/1
+
+###
+// Add New Jackpot Record
+POST http://localhost:3000/jackpots
+Content-Type: application/json
+
+{
+    "jackpotName": "testJackpot2",
+    "jackpotType": ["testType"],
+    "percentageSetList": [1, 2, 3],
+    "gameList": [1, 2]
+}
+
+###
+// Delete Specific Jackpot Record
+DELETE http://localhost:3000/jackpots/1
+
+###
+// Delete All Jackpots
+DELETE http://localhost:3000/jackpots
+
+###
+// Update Specific Jackpot Record
+PATCH http://localhost:3000/jackpots/1
+Content-Type: application/json
+
+{
+    "jackpotName": "testJackpot1",
+    "jackpotType": ["testType"],
+    "percentageSetList": [1, 2, 3],
+    "gameList": [1, 2]
+}

@@ -10,6 +10,7 @@ router.get('/', async (req, res) => {
     } catch (err) {
         res.status(500).json({ message: err.message})
     }
+    console.log("Remove Id for gameList")
 })
 
 // Getting One
@@ -28,16 +29,21 @@ router.post('/', async (req, res) => {
         }
         
         // Check if App Name exists
-        // const existingAppName = await App.findOne({ appName: req.body.appName.toLowerCase() })
-        // if (existingAppName && existingAppName.appName.toLowerCase() === req.body.appName.toLowerCase()) {
-        //     return res.status(400).json({ message: 'App Name Already exists!' })
-        // }
-
+        const existingAppName = await App.findOne({ appName: req.body.appName });
+        if (existingAppName && existingAppName.appName.toLowerCase() === req.body.appName.toLowerCase()) {
+            return res.status(400).json({ message: 'App Name Already exists!' });
+        }
         const app = new App({
-            gameList: {
+            appName: req.body.appName,
+            gameSetId: newAppId,
+            jackpotId: req.body.jackpotId,
+            jackpotVersion: req.body.jackpotVersion,
+            region: req.body.region,
+            interface: req.body.interface,
+            gameList: [{
                 gameId: req.body.gameId,
-                gameVersion: req.body.gameVersion
-            },
+                gameVersion: req.body.gameVersion,
+            }],
         })
         const newApp = await app.save()
         res.status(201).json(newApp)
@@ -69,6 +75,17 @@ router.delete('/:id', getApp, async (req, res) => {
     }
 })
 
+// Deleting All
+router.delete('/', async (req, res) => {
+    try {
+        await App.deleteMany({})
+        res.json({ message: 'All apps deleted' })
+    } catch (err) {
+        res.status(500).json({ message: err.message })
+    }
+})
+
+// Get App By Id
 async function getApp(req, res, next) {
     let app
     try {

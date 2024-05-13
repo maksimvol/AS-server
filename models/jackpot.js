@@ -1,18 +1,30 @@
 const mongoose = require('mongoose')
 
-const gameSchema = new mongoose.Schema({
-    name: {
+const jackpotSchema = new mongoose.Schema({
+    jackpotName: {
         type: String,
         required: true
     },
-    gameId: {
+    jackpotId: {
         type: Number,
     },
-    gameAdded: {
+    jackpotType: {
+        type: [String],
+        required: true
+    },
+    percentageSetList: {
+        type: [Number],
+        required: true
+    },
+    gameList: {
+        type: [Number],
+        required: true
+    },
+    jackpotAdded: {
         type: Date,
         required: true,
         default: Date.now
     }
 })
 
-module.exports = mongoose.model('Game', gameSchema)
+module.exports = mongoose.model('Jackpot', jackpotSchema)

@@ -1,0 +1,36 @@
+// Get All Math Records
+GET http://localhost:3000/maths
+
+###
+// Get Specific Math Record
+GET http://localhost:3000/maths/1
+
+###
+// Add New Math Record
+POST http://localhost:3000/maths
+Content-Type: application/json
+
+{
+    "mathName": "testMath2",
+    "percentage": [1, 2],
+    "percentageSetList": [1, 2, 3]
+}
+
+###
+// Delete Specific Math Record
+DELETE http://localhost:3000/maths/1
+percentage
+###
+// Delete All Maths
+DELETE http://localhost:3000/maths
+
+###
+// Update Specific Math Record
+PATCH http://localhost:3000/maths/1
+Content-Type: application/json
+
+{
+    "mathName": "testMath2",
+    "percentage": [1, 2],
+    "percentageSetList": [1, 2, 3],
+}
