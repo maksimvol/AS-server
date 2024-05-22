@@ -1,13 +1,13 @@
 // Get All Jackpot Records
-GET http://localhost:3000/jackpots
+GET http://localhost:3001/jackpots
 
 ###
 // Get Specific Jackpot Record
-GET http://localhost:3000/jackpots/1
+GET http://localhost:3001/jackpots/1
 
 ###
 // Add New Jackpot Record
-POST http://localhost:3000/jackpots
+POST http://localhost:3001/jackpots
 Content-Type: application/json
 
 {
@@ -19,15 +19,15 @@ Content-Type: application/json
 
 ###
 // Delete Specific Jackpot Record
-DELETE http://localhost:3000/jackpots/1
+DELETE http://localhost:3001/jackpots/1
 
 ###
 // Delete All Jackpots
-DELETE http://localhost:3000/jackpots
+DELETE http://localhost:3001/jackpots
 
 ###
 // Update Specific Jackpot Record
-PATCH http://localhost:3000/jackpots/1
+PATCH http://localhost:3001/jackpots/1
 Content-Type: application/json
 
 {

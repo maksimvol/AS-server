@@ -1,13 +1,13 @@
 // Get All App Records
-GET http://localhost:3000/apps
+GET http://localhost:3001/apps
 
 ###
 // Get Specific App Record
-GET http://localhost:3000/apps/663cd19a0acf693338d00e41
+GET http://localhost:3001/apps/663cd19a0acf693338d00e41
 
 ###
 // Add New App Record
-POST http://localhost:3000/apps
+POST http://localhost:3001/apps
 Content-Type: application/json
 
 {
@@ -22,15 +22,15 @@ Content-Type: application/json
 
 ###
 // Delete Specific App Record
-DELETE http://localhost:3000/apps/663cd19a0acf693338d00e41
+DELETE http://localhost:3001/apps/663cd19a0acf693338d00e41
 
 ###
 // Delete All Apps
-DELETE http://localhost:3000/apps
+DELETE http://localhost:3001/apps
 
 ###
 // Update Specific App Record
-PATCH http://localhost:3000/apps/3
+PATCH http://localhost:3001/apps/3
 Content-Type: application/json
 
 {

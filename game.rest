@@ -1,13 +1,13 @@
 // Get All Game Records
-GET http://localhost:3000/games
+GET http://localhost:3001/games
 
 ###
 // Get Specific Game Record
-GET http://localhost:3000/games/1
+GET http://localhost:3001/games/1
 
 ###
 // Add New Game Record
-POST http://localhost:3000/games
+POST http://localhost:3001/games
 Content-Type: application/json
 
 {
@@ -23,15 +23,15 @@ Content-Type: application/json
 
 ###
 // Delete Specific Game Record
-DELETE http://localhost:3000/games/3
+DELETE http://localhost:3001/games/3
 
 ###
 // Delete All Games
-DELETE http://localhost:3000/games
+DELETE http://localhost:3001/games
 
 ###
 // Update Specific Game Record
-PATCH http://localhost:3000/games/3
+PATCH http://localhost:3001/games/3
 Content-Type: application/json
 
 {
