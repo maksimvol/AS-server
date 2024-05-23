@@ -20,6 +20,7 @@ router.get('/:id', getApp, (req, res) => {
 
 // Creating One
 router.post('/', async (req, res) => {
+
     try {
         // Find Maximum App Id
         const maxId = await App.findOne().sort({ gameSetId: -1 })
@@ -27,12 +28,13 @@ router.post('/', async (req, res) => {
         if (maxId && maxId.gameSetId) {
             newAppId = maxId.gameSetId + 1
         }
-        
+
         // Check if App Name exists
         const existingAppName = await App.findOne({ appName: req.body.appName });
         if (existingAppName && existingAppName.appName.toLowerCase() === req.body.appName.toLowerCase()) {
             return res.status(400).json({ message: 'App Name Already exists!' });
         }
+        console.log("temp", req.body.gameList) 
         const app = new App({
             appName: req.body.appName,
             gameSetId: newAppId,
@@ -40,10 +42,7 @@ router.post('/', async (req, res) => {
             jackpotVersion: req.body.jackpotVersion,
             region: req.body.region,
             interface: req.body.interface,
-            gameList: [{
-                gameId: req.body.gameId,
-                gameVersion: req.body.gameVersion,
-            }],
+            gameList: req.body.gameList,
         })
         const newApp = await app.save()
         res.status(201).json(newApp)

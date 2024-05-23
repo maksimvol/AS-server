@@ -11,7 +11,7 @@ POST http://localhost:3001/apps
 Content-Type: application/json
 
 {
-    "appName": "testApp1",
+    "appName": "testApp2",
     "jackpotId": 1,
     "jackpotVersion": ["1.0.0.0", "1"],
     "region": "Colombia",
