@@ -14,7 +14,6 @@ Content-Type: application/json
     "jackpotName": "testJackpot2",
     "jackpotType": ["testType"],
     "percentageSetList": [1, 2, 3],
-    "gameList": [1, 2]
 }
 
 ###
@@ -34,5 +33,4 @@ Content-Type: application/json
     "jackpotName": "testJackpot1",
     "jackpotType": ["testType"],
     "percentageSetList": [1, 2, 3],
-    "gameList": [1, 2]
 }

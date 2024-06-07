@@ -16,10 +16,6 @@ const jackpotSchema = new mongoose.Schema({
         type: [Number],
         required: true
     },
-    gameList: {
-        type: [Number],
-        required: true
-    },
     jackpotAdded: {
         type: Date,
         required: true,

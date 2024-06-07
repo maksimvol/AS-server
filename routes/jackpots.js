@@ -7,6 +7,7 @@ router.get('/', async (req, res) => {
     try {
         const jackpots = await Jackpot.find()
         res.json(jackpots)
+        console.log(jackpots)
     } catch (err) {
         res.status(500).json({ message: err.message})
     }
@@ -43,7 +44,6 @@ router.post('/', async (req, res) => {
             jackpotId: newJackpotId,
             jackpotType: req.body.jackpotType,
             percentageSetList: req.body.percentageSetList,
-            gameList: req.body.gameList
         })
         const newJackpot = await jackpot.save()
         res.status(201).json(newJackpot)
