@@ -52,11 +52,15 @@ router.post('/', async (req, res) => {
 
 // Updating One
 router.patch('/:id', getApp, async (req, res) => {
-    if (req.body.appName != null) {
-        res.app.appName = req.body.name
-    }
     try {
+        for (const [key] of Object.entries(req.body)) {
+            if (res.app[key] != null){
+                res.app[key] = req.body[key]
+            }
+        }
+
         const updatedApp = await res.app.save()
+
         res.json(updatedApp)
     } catch (err) {
         res.status(400).json({ message: err.message })

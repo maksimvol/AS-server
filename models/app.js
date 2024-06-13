@@ -33,11 +33,6 @@ const appSchema = new mongoose.Schema({
             type: [String, String]
         }
     }],
-    // appAdded: {
-    //     type: Date,
-    //     required: true,
-    //     default: Date.now
-    // }
 })
 
 module.exports = mongoose.model('App', appSchema)

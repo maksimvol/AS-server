@@ -3,7 +3,7 @@ GET http://localhost:3001/apps
 
 ###
 // Get Specific App Record
-GET http://localhost:3001/apps/663cd19a0acf693338d00e41
+GET http://localhost:3001/apps/5
 
 ###
 // Add New App Record
@@ -30,11 +30,11 @@ DELETE http://localhost:3001/apps
 
 ###
 // Update Specific App Record
-PATCH http://localhost:3001/apps/3
+PATCH http://localhost:3001/apps/5
 Content-Type: application/json
 
 {
-    "appName": "testApp1",
+    "appName": "testApp2",
     "jackpotId": 1,
     "jackpotVersion": ["1.0.0.0", "1"],
     "region": "Colombia",

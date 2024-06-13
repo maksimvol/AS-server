@@ -6,7 +6,7 @@
   "scripts": {
     "devStart": "nodemon server.js"
   },
-  "author": "",
+  "author": "Maksims Volokotkins",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
