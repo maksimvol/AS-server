@@ -59,18 +59,30 @@ router.post('/', async (req, res) => {
 // Updating One
 router.patch('/:id', getGame, async (req, res) => {
     if (req.body.gameName != null) {
-        res.game.gameName = req.body.gameName
+        res.game.gameName = req.body.gameName;
     }
-    if (req.body.gameId != null) {
-        res.game.gameId = req.body.gameId
+    if (req.body.maxWLCMain != null) {
+        res.game.maxWLCMain = req.body.maxWLCMain;
+    }
+    if (req.body.maxWLCFreegames != null) {
+        res.game.maxWLCFreegames = req.body.maxWLCFreegames;
+    }
+    if (req.body.freegames != null) {
+        res.game.freegames = req.body.freegames;
+    }
+    if (req.body.gamble != null) {
+        res.game.gamble = req.body.gamble;
+    }
+    if (req.body.jackpot != null) {
+        res.game.jackpot = req.body.jackpot;
     }
     try {
-        const updatedGame = await res.game.save()
-        res.json(updatedGame)
+        const updatedGame = await res.game.save();
+        res.json(updatedGame);
     } catch (err) {
-        res.status(400).json({ message: err.message })
+        res.status(400).json({ message: err.message });
     }
-})
+});
 
 // Deleting One
 router.delete('/:id', getGame, async (req, res) => {

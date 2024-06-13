@@ -55,14 +55,15 @@ router.post('/', async (req, res) => {
 
 // Updating One
 router.patch('/:id', getMath, async (req, res) => {
-    if (req.body.mathName != null) {
-        res.math.mathName = req.body.mathName
-    }
-    if (req.body.mathId != null) {
-        res.math.mathId = req.body.mathId
-    }
     try {
+        for (const [key] of Object.entries(req.body)) {
+            if (res.math[key] != null){
+                res.math[key] = req.body[key]
+            }
+        }
+
         const updatedMath = await res.math.save()
+
         res.json(updatedMath)
     } catch (err) {
         res.status(400).json({ message: err.message })

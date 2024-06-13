@@ -54,14 +54,15 @@ router.post('/', async (req, res) => {
 
 // Updating One
 router.patch('/:id', getJackpot, async (req, res) => {
-    if (req.body.jackpotName != null) {
-        res.jackpot.jackpotName = req.body.jackpotName
-    }
-    if (req.body.jackpotId != null) {
-        res.jackpot.jackpotId = req.body.jackpotId
-    }
     try {
+        for (const [key] of Object.entries(req.body)) {
+            if (res.jackpot[key] != null){
+                res.jackpot[key] = req.body[key]
+            }
+        }
+
         const updatedJackpot = await res.jackpot.save()
+
         res.json(updatedJackpot)
     } catch (err) {
         res.status(400).json({ message: err.message })

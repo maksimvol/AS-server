@@ -26,11 +26,11 @@ DELETE http://localhost:3001/maths
 
 ###
 // Update Specific Math Record
-PATCH http://localhost:3001/maths/1
+PATCH http://localhost:3001/maths/2
 Content-Type: application/json
 
 {
     "mathName": "testMath2",
     "percentage": [1, 2],
-    "percentageSetList": [1, 2, 3],
+    "percentageSetList": [1, 2, 3]
 }

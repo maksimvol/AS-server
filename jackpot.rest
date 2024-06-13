@@ -31,6 +31,6 @@ Content-Type: application/json
 
 {
     "jackpotName": "testJackpot1",
-    "jackpotType": ["testType"],
-    "percentageSetList": [1, 2, 3],
+    "jackpotType": "testType",
+    "percentageSetList": [1],
 }

@@ -30,15 +30,15 @@ DELETE http://localhost:3001/apps
 
 ###
 // Update Specific App Record
-PATCH http://localhost:3001/apps/5
+PATCH http://localhost:3001/apps/1
 Content-Type: application/json
 
 {
-    "appName": "testApp2",
+    "appName": "testApp1",
     "jackpotId": 1,
     "jackpotVersion": ["1.0.0.0", "1"],
-    "region": "Colombia",
-    "interface": "ultrahd",
+    "region": "Latvia",
+    "interface": "Interface1",
     "gameId": 1,
     "gameVersion": ["1.0.0.0", "1"]
 }

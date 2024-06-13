@@ -31,13 +31,13 @@ DELETE http://localhost:3001/games
 
 ###
 // Update Specific Game Record
-PATCH http://localhost:3001/games/3
+PATCH http://localhost:3001/games/0
 Content-Type: application/json
 
 {
     "gameName": "testGame1",
-    "systemId": 1, // Can be updated or not?
-    "maxWLCMain": 5000,
+    "systemId": 1,
+    "maxWLCMain": 50001,
     "maxWLCFreegames": 10000,
     "freegames": false,
     "gamble": true,
