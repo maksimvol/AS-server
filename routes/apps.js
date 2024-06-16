@@ -33,7 +33,6 @@ router.post('/', async (req, res) => {
         if (existingAppName && existingAppName.appName.toLowerCase() === req.body.appName.toLowerCase()) {
             return res.status(400).json({ message: 'App Name Already exists!' });
         }
-        console.log("temp", req.body.gameList) 
         const app = new App({
             appName: req.body.appName,
             gameSetId: newAppId,

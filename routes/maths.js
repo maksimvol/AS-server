@@ -7,7 +7,6 @@ router.get('/', async (req, res) => {
     try {
         const maths = await Math.find()
         res.json(maths)
-        console.log(maths)
     } catch (err) {
         res.status(500).json({ message: err.message})
     }
@@ -16,7 +15,6 @@ router.get('/', async (req, res) => {
 // Getting One
 router.get('/:id', getMath, (req, res) => {
     res.json(res.math)
-    console.log(res.math)
 })
 
 // Creating One
@@ -92,7 +90,6 @@ router.delete('/', async (req, res) => {
 
 // Get Math By Id
 async function getMath(req, res, next) {
-    console.log("get by id ", typeof req.params.id)
     let math
     try {
         math = await Math.findOne({ mathId: req.params.id })

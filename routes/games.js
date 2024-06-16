@@ -109,7 +109,6 @@ async function getGame(req, res, next) {
     let game
     try {
         game = await Game.findOne({ gameId: req.params.id })
-        // console.log(game.gameId)
         if(game == null) {
             return res.status(404).json({ message: 'Cannot Find Game'})
         }

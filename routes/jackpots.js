@@ -7,7 +7,6 @@ router.get('/', async (req, res) => {
     try {
         const jackpots = await Jackpot.find()
         res.json(jackpots)
-        console.log(jackpots)
     } catch (err) {
         res.status(500).json({ message: err.message})
     }
