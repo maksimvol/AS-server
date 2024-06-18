@@ -58,25 +58,12 @@ router.post('/', async (req, res) => {
 
 // Updating One
 router.patch('/:id', getGame, async (req, res) => {
-    if (req.body.gameName != null) {
-        res.game.gameName = req.body.gameName;
-    }
-    if (req.body.maxWLCMain != null) {
-        res.game.maxWLCMain = req.body.maxWLCMain;
-    }
-    if (req.body.maxWLCFreegames != null) {
-        res.game.maxWLCFreegames = req.body.maxWLCFreegames;
-    }
-    if (req.body.freegames != null) {
-        res.game.freegames = req.body.freegames;
-    }
-    if (req.body.gamble != null) {
-        res.game.gamble = req.body.gamble;
-    }
-    if (req.body.jackpot != null) {
-        res.game.jackpot = req.body.jackpot;
-    }
     try {
+        for (const [key] of Object.entries(req.body)) {
+            if (res.game[key] != null){
+                res.game[key] = req.body[key]
+            }
+        }
         const updatedGame = await res.game.save();
         res.json(updatedGame);
     } catch (err) {
