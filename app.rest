@@ -13,11 +13,15 @@ Content-Type: application/json
 {
     "appName": "testApp2",
     "jackpotId": 1,
-    "jackpotVersion": ["1.0.0.0", "1"],
+    "jackpotVersion": "1.0.0.0",
     "region": "Colombia",
     "interface": "ultrahd",
-    "gameId": 1,
-    "gameVersion": ["1.0.0.0", "1"]
+    "gameList": [
+        {
+            "gameId": 1,
+            "gameVersion": ["1.0.0.0", "1"]
+        }
+    ]
 }
 
 ###

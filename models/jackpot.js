@@ -9,7 +9,7 @@ const jackpotSchema = new mongoose.Schema({
         type: Number,
     },
     jackpotType: {
-        type: [String],
+        type: String,
         required: true
     },
     percentageSetList: {

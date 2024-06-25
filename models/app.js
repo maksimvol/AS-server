@@ -17,7 +17,7 @@ const appSchema = new mongoose.Schema({
         default: ['4.0.0.0', '1']
     },
     region: {
-        type: [String],
+        type: String,
         required: true
     },
     interface: {

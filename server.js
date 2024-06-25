@@ -1,8 +1,9 @@
 require('dotenv').config()
 
-const express = require('express')
-const app = express()
-const mongoose = require('mongoose')
+const express = require('express');
+const app = express();
+const port = 3001
+const mongoose = require('mongoose');
 const cors = require("cors");
 
 mongoose.connect(process.env.DATABASE_URL)
@@ -26,4 +27,4 @@ app.use('/jackpots', jackpotsRouter)
 const mathsRouter = require('./routes/maths')
 app.use('/maths', mathsRouter)
 
-app.listen(3001, () => console.log('Server Started'))
+app.listen(port, () => console.log('Server Started On Port', port))

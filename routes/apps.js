@@ -33,6 +33,9 @@ router.post('/', async (req, res) => {
         if (existingAppName && existingAppName.appName.toLowerCase() === req.body.appName.toLowerCase()) {
             return res.status(400).json({ message: 'App Name Already exists!' });
         }
+        // if (!req.body.gameList || req.body.gameList.length === 0) {
+        //     return res.status(400).json({ message: 'App must have at least One Game!' });
+        // }
         const app = new App({
             appName: req.body.appName,
             gameSetId: newAppId,
@@ -68,7 +71,7 @@ router.patch('/:id', getApp, async (req, res) => {
 
 // Deleting One
 router.delete('/:id', getApp, async (req, res) => {
-    try {        
+    try {
         await res.app.deleteOne()
         res.json({ message: 'Deleted App' })
     } catch (err) {
