@@ -25,6 +25,7 @@ afterEach(async () => {
 afterAll(async () => {
     await mongoose.connection.close();
 });
+
 test('Scenario 1.1', async () => {
     const newApp = {
         // appName: 'Test App',
